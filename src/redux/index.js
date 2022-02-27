@@ -1,8 +1,9 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import cartsReducer from './carts/reducer';
 
 const rootReducer = combineReducers({
-  //cartsReducer
+  cartsReducer
   //pokemonsReducer
 })
 
