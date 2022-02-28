@@ -60,7 +60,8 @@ const App = () => {
           weight: response1.weight,
           stats: getAllStats(response1.stats),
           description: getFrenchDescription(response2.flavor_text_entries),
-          images: getAllImagesUrl(response1.sprites)
+          images: getAllImagesUrl(response1.sprites),
+          price: Math.floor(Math.random() * 50)
         }
       }
 
