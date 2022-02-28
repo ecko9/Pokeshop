@@ -28,13 +28,15 @@ const removeQuantityOrItemToCart = (cart, item) => {
   let cartTmp = cart.map((cartItem) => {
     if (cartItem.pokemonId === item.pokemonId) {
       if (cartItem.quantity - item.quantity <= 0)
-        return
+        return null
       else
         return { pokemonId: item.pokemonId, pokemonPrice: item.pokemonPrice, quantity: cartItem.quantity - item.quantity }
     }
+    else
+      return cartItem
   })
 
-  return cartTmp
+  return cartTmp.filter(x => x !== null)
 }
 
 const cartsReducer = (state = initialState, action) => {
