@@ -1,0 +1,43 @@
+@import '../components/PokemonsList/index.scss';
+
+.Pokemons {
+  position: relative;  
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .NavBar {
+    width: 100%;
+    height: 10%;
+    background-color: red;
+  }
+
+  .Shop {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    
+    .Items {
+      flex: 2;
+      height: 100%;
+
+      display: flex;
+    }
+
+    .Cart {
+      width: 20%;
+      height: 100%;
+
+      background-color: green;
+    }
+  }
+
+  .Footer {
+    width: 100%;
+    height: 10%;
+    background-color: red;
+  }
+}

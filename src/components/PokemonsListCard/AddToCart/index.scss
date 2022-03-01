@@ -1,0 +1,41 @@
+.AddToCart {
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+
+  .price {
+    height: 100%;
+    width: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .quantity {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      height: 70%;
+    }
+
+    span {
+      width: 20%;
+      text-align: center;
+    }
+  }
+
+  .btn-cart {
+    height: 100%;
+    width: 30%;
+  }
+}

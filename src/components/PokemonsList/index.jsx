@@ -9,15 +9,14 @@ const PokemonList = ({ pokemonsList }) => {
 
   React.useLayoutEffect(
     () => {
-
       setPageList(pokemonsList.slice(page, page + resultsPerPage))
-
       return
+      // eslint-disable-next-line
     }, [page, resultsPerPage]
   )
 
   return (
-    <div className='PokemonList'>
+    <div className='PokemonsList'>
       {pageList !== null && pageList.map((pokemon) => (
         <PokemonsListCard key={pokemon.id} pokemon={pokemon} />
       ))

@@ -5,11 +5,17 @@ const Pokemons = ({ pokemonsList }) => {
 
   return (
     <div className='Pokemons'>
-      <h1>Cooucou</h1>
+      <div className='NavBar' />
+      <div className='Shop'>
+        <div className='Items'>
+          {pokemonsList !== null &&
+            <PokemonsList pokemonsList={pokemonsList} />
+          }
+        </div>
+        <div className='Cart' />
 
-      {pokemonsList !== null &&
-        <PokemonsList pokemonsList={pokemonsList} />
-      }
+      </div>
+      <div className='Footer' />
     </div>
   );
 };

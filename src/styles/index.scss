@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+body {
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  cursor: default;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+
+.App {
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+@import '../pages/Home.scss';
+@import '../pages/Pokemons.scss';

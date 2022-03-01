@@ -101,8 +101,9 @@ const App = () => {
     <div className='App'>
       <Router>
         <Routes>
+          <Route path='/' exact element={<Home />} />
           <Route path='/pokemons' exact element={<Pokemons pokemonsList={pokemonsListFormated} />} />
-          <Route path='*' element={<Home />} />
+          <Route path='*' element={<Pokemons />} />
         </Routes>
       </Router>
     </div>
