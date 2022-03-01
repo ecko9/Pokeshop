@@ -103,7 +103,7 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<Home />} />
           <Route path='/pokemons' exact element={<Pokemons pokemonsList={pokemonsListFormated} />} />
-          <Route path='*' element={<Pokemons />} />
+          <Route path='*' element={<Pokemons pokemonsList={pokemonsListFormated} />} />
         </Routes>
       </Router>
     </div>
