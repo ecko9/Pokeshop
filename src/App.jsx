@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Pokemons from 'pages/Pokemons';
+import PokemonDetail from 'pages/PokemonDetail';
 
 const App = () => {
 
@@ -69,7 +70,7 @@ const App = () => {
         if (array.length === pokemonsList.length)
           setPokemonsListFormated(array)
         else {
-          if (array.length === 50)
+          if (array.length % 50 === 0)
             setPokemonsListFormated(array)
           fetch(`${pokemonsList[index].url}`)
             .then(response1 => response1.json())
@@ -103,6 +104,7 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<Home />} />
           <Route path='/pokemons' exact element={<Pokemons pokemonsList={pokemonsListFormated} />} />
+          <Route path='/pokemons/:id' exact element={<PokemonDetail pokemonsList={pokemonsListFormated} />} />
           <Route path='*' element={<Pokemons pokemonsList={pokemonsListFormated} />} />
         </Routes>
       </Router>
