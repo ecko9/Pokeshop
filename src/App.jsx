@@ -66,12 +66,15 @@ const App = () => {
         }
       }
 
-      const fetchPokemonsInfos = async (pokemonsList, array, index = 0) => {
+      const fetchPokemonsInfos = async (pokemonsList, array = [], index = 0) => {
         if (array.length === pokemonsList.length)
           setPokemonsListFormated(array)
+
         else {
-          if (array.length % 50 === 0)
+
+          if (array.length === 50)
             setPokemonsListFormated(array)
+
           fetch(`${pokemonsList[index].url}`)
             .then(response1 => response1.json())
             .then(async (response1) => {
@@ -89,10 +92,8 @@ const App = () => {
         }
       }
 
-      if (pokemonsList && pokemonsList.length > 0) {
-        let arrayTmp = []
-        fetchPokemonsInfos(pokemonsList, arrayTmp)
-      }
+      if (pokemonsList && pokemonsList.length > 0)
+        fetchPokemonsInfos(pokemonsList)
 
       return
     }, [pokemonsList]
@@ -104,7 +105,7 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<Home />} />
           <Route path='/pokemons' exact element={<Pokemons pokemonsList={pokemonsListFormated} />} />
-          <Route path='/pokemons/:id' exact element={<PokemonDetail pokemonsList={pokemonsListFormated} />} />
+          <Route path='/pokemons/:id' exact element={<PokemonDetail />} />
           <Route path='*' element={<Pokemons pokemonsList={pokemonsListFormated} />} />
         </Routes>
       </Router>

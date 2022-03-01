@@ -6,11 +6,13 @@ const Illustrations = ({ pokemon }) => {
 
   return (
     <div className='Illustrations'>
-      {console.log(pokemon)}
-      <img className='display-img' src={pokemon.images[displayImageIndex]} />
+
+      <div className='display-img' style={{ backgroundImage: `url(${pokemon.images[displayImageIndex]})` }} />
+
       {pokemon && pokemon.images.map((img) => (
-        <img className="mini-img" src={img} alt="pokemon" />
+        <div className="mini-img" key={img} style={{ backgroundImage: `url(${img})` }} />
       ))}
+
     </div>
   );
 };
