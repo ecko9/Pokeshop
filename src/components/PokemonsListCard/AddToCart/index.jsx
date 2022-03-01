@@ -1,8 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from 'redux/carts/actions';
 
 const AddToCart = ({ pokemon }) => {
 
   const [quantity, setQuantity] = React.useState(1)
+  const dispatch = useDispatch()
+
+  const removeOneQuantity = () => {
+    if (quantity > 1)
+      setQuantity(quantity - 1)
+  }
+
+  const addPokemonToCart = () => {
+    dispatch(addToCart(pokemon.id, pokemon.name, pokemon.color, pokemon.price, pokemon.images[1], quantity))
+    setQuantity(1)
+  }
 
   return (
     <div className='AddToCart'>
@@ -10,12 +23,14 @@ const AddToCart = ({ pokemon }) => {
       <span className='price'>{pokemon.price} €</span>
 
       <div className='quantity'>
-        <button className='remove-one' onClick={e => setQuantity(quantity - 1)}>-</button>
+        <div className='remove-one' onClick={e => removeOneQuantity()}><i className="fa-solid fa-minus"></i></div>
         <span>{quantity}</span>
-        <button className='add-one' onClick={e => setQuantity(quantity + 1)}>+</button>
+        <div className='add-one' onClick={e => setQuantity(quantity + 1)}><i className="fa-solid fa-plus"></i></div>
       </div>
 
-      <button className='btn-cart'>Ajouter au Panier</button>
+      <div className='btn-cart' onClick={e => addPokemonToCart()}>
+        <i className="fa-solid fa-cart-shopping fa-xl"></i>
+      </div>
 
     </div>
   );

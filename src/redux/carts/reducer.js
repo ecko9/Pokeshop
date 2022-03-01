@@ -11,7 +11,7 @@ const addQuantityOrItemToCart = (cart, item) => {
 
     if (cartItem.pokemonId === item.pokemonId) {
       stored = true
-      return { pokemonId: item.pokemonId, pokemonPrice: item.pokemonPrice, quantity: cartItem.quantity + item.quantity }
+      return { pokemonId: item.pokemonId, pokemonName: item.pokemonName, pokemonColor: item.pokemonColor, pokemonPrice: item.pokemonPrice, pokemonImage: item.pokemonImage, quantity: cartItem.quantity + item.quantity }
     }
     else
       return cartItem
@@ -30,7 +30,7 @@ const removeQuantityOrItemToCart = (cart, item) => {
       if (cartItem.quantity - item.quantity <= 0)
         return null
       else
-        return { pokemonId: item.pokemonId, pokemonPrice: item.pokemonPrice, quantity: cartItem.quantity - item.quantity }
+        return { pokemonId: item.pokemonId, pokemonName: item.pokemonName, pokemonColor: item.pokemonColor, pokemonPrice: item.pokemonPrice, pokemonImage: item.pokemonImage, quantity: cartItem.quantity - item.quantity }
     }
     else
       return cartItem

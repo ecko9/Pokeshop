@@ -1,5 +1,6 @@
 @import '../components/NavBar/index.scss';
 @import '../components/PokemonsList/index.scss';
+@import '../components/RightCart/index.scss';
 
 .Pokemons {
   position: relative;  
@@ -20,14 +21,6 @@
       height: 100%;
 
       display: flex;
-    }
-
-    .Cart {
-      width: 20%;
-      height: 100%;
-
-      border-left: 1px solid black;
-      transition: width 0.5s linear;
     }
   }
 

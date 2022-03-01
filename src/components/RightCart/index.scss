@@ -1,0 +1,50 @@
+@import '../PokemonsRightCartCard/index.scss';
+
+.RightCart {
+  position: relative;
+  width: 20%;
+  height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  border-left: 1px solid black;
+  transition: width 0.5s linear;
+
+  h3 {
+    width: 100%;
+    height: 5%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-bottom: 1px solid black;
+  }
+
+  .btn-payment {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+
+    height: 50px;
+    width: 100%;
+
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    i {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

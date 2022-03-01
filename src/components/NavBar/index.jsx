@@ -10,7 +10,7 @@ const NavBar = ({ setDisplayRightCart, displayRightCart }) => {
       <h1 onClick={e => navigate('/pokemons')}>PokeShop</h1>
 
       <div className='NavCart' onClick={e => setDisplayRightCart(!displayRightCart)}>
-        <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+        <i className="fa-solid fa-cart-shopping fa-2xl"></i>
       </div>
 
     </div>

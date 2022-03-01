@@ -1,4 +1,5 @@
 import NavBar from 'components/NavBar';
+import RightCart from 'components/RightCart';
 import PokemonsList from 'components/PokemonsList';
 import React from 'react';
 
@@ -14,11 +15,10 @@ const Pokemons = ({ pokemonsList }) => {
       <div className='Shop'>
 
         <div className='Items'>
-          {pokemonsList !== null &&
-            <PokemonsList pokemonsList={pokemonsList} />
-          }
+          {pokemonsList !== null && <PokemonsList pokemonsList={pokemonsList} />}
         </div>
-        <div className='Cart' style={displayRightCart ? { width: '20%' } : { width: '0%' }} />
+
+        <RightCart displayRightCart={displayRightCart} />
 
       </div>
 
