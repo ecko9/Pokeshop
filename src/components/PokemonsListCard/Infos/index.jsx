@@ -51,7 +51,7 @@ const Infos = ({ pokemon }) => {
   }
 
   return (
-    <div className='Infos' >
+    <div className='Infos'>
 
       <h2 className='name'>{pokemon.name}</h2>
 
