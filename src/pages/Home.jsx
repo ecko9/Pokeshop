@@ -8,13 +8,11 @@ const Home = () => {
   return (
     <div className='Home'>
 
-      <div className='bg-overlay' />
-
       <div className='welcome'>
-        <h1>PokéShoP</h1>
-        <h2>Achetez les tous!</h2>
+        <h1>PoKéShoP</h1>
+        <h2>Achetez les tous !</h2>
         <div className='btn-enter' onClick={e => navigate(`/pokemons`)}>
-          {"Entrer"}
+          <span className='link'>{"Entrer"}</span>
         </div>
       </div>
 

@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mouse+Memoirs&display=swap');
+
+$font-primary: 'Mouse Memoirs';
+$font-secondary: 'Luckiest Guy';
+//font-family: 'Luckiest Guy', cursive;
+//font-family: 'Mouse Memoirs', sans-serif;
+$color-primary: rgb(255, 238, 0);
+$color-secondary: rgb(18, 54, 119);
+$color-ternary: rgba(253, 76, 70, 0.3);
+
+$white: rgb(243, 242, 236);
+$black: rgb(20, 20, 20);
+
 
 * {
   box-sizing: border-box;
@@ -9,6 +21,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.link {
+  cursor: pointer;
+  text-decoration: none;
+}
 
 body {
   width: 100vw;
