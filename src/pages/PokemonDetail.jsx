@@ -45,7 +45,7 @@ const PokemonDetail = () => {
           stats: getAllStats(response1.stats),
           description: getFrenchDescription(response2.flavor_text_entries),
           images: getAllImagesUrl(response1.sprites),
-          price: Math.floor(Math.random() * 50)
+          price: Math.floor((response1.height * response1.weight * 2) / (response1.height * 5))
         }
       }
 
