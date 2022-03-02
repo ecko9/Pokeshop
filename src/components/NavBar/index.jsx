@@ -7,10 +7,12 @@ const NavBar = ({ setDisplayRightCart, displayRightCart }) => {
   return (
     <div className='NavBar'>
 
-      <h1 onClick={e => navigate('/pokemons')}>PokeShop</h1>
+      <h1>
+        <span className='link' onClick={e => navigate('/pokemons')}>PokéShoP</span>
+      </h1>
 
-      <div className='NavCart' onClick={e => setDisplayRightCart(!displayRightCart)}>
-        <i className="fa-solid fa-cart-shopping fa-2xl"></i>
+      <div className='NavCart'>
+        <i className="fa-solid fa-cart-shopping fa-xl link" onClick={e => setDisplayRightCart(!displayRightCart)}></i>
       </div>
 
     </div>
