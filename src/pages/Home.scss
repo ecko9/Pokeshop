@@ -37,7 +37,7 @@
       justify-content: center;
       align-items: flex-end;
 
-      font-family: $font-primary, Impact, sans-serif;
+      font-family: $font-primary, $font-secondary, Impact, sans-serif;
       color: $color-primary;
       letter-spacing: -1px;
       text-shadow: 8px 1px $color-secondary, -2px 1px $color-secondary, -2px -1px $color-secondary;
@@ -61,7 +61,7 @@
       justify-content: center;
       text-align: center;
 
-      font-family: $font-primary, Impact, sans-serif;
+      font-family: $font-primary, $font-secondary, Impact, sans-serif;
       font-weight: bold;
       color: $white;
       letter-spacing: -1px;
