@@ -37,17 +37,17 @@ const Description = ({ pokemon }) => {
   return (
     <div className='Description'>
 
-      <div className='name' style={{ backgroundColor: `${pokemon.color}` }}>
+      <div className='name' style={{ background: `linear-gradient(to bottom, ${pokemon.color}, rgba(255, 255, 255, 0.8) 100%)` }}>
         <h2>{pokemon.name}</h2>
         <div className='bg-overlay' />
       </div>
 
-      <div className='text' style={{ backgroundColor: `${pokemon.color}` }}>
-        <p>{pokemon.description}</p>
+      <div className='text'>
+        <p>" {pokemon.description} "</p>
         <div className='bg-overlay' />
       </div>
 
-      <div className='stats' style={{ backgroundColor: `${pokemon.color}` }}>
+      <div className='stats' style={{ background: `linear-gradient(to top, ${pokemon.color}, rgba(255, 255, 255, 0.8) 100%)` }}>
         {pokemon.stats.map(stat => (
           <div className='stat' key={stat.name}>
             {setStatSymbol(stat)}
