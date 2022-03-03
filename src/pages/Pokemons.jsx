@@ -3,7 +3,7 @@ import RightCart from 'components/RightCart';
 import PokemonsList from 'components/PokemonsList';
 import React from 'react';
 
-const Pokemons = ({ pokemonsList }) => {
+const Pokemons = ({ pokemonsInfos }) => {
 
   const [displayRightCart, setDisplayRightCart] = React.useState(true)
 
@@ -15,7 +15,7 @@ const Pokemons = ({ pokemonsList }) => {
       <div className='Shop'>
 
         <div className='Items'>
-          {pokemonsList !== null && <PokemonsList pokemonsList={pokemonsList} />}
+          {pokemonsInfos.listFormatedTmp !== null && <PokemonsList pokemonsInfos={pokemonsInfos} />}
         </div>
 
         <RightCart displayRightCart={displayRightCart} />

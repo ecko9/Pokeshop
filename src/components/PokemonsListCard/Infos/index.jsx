@@ -65,7 +65,7 @@ const Infos = ({ pokemon }) => {
 
       <Characteristics pokemon={pokemon} />
 
-      <div className='image' style={{ backgroundImage: `url(${pokemon.images[1]})` }} />
+      <div className='image' style={pokemon.images[1] ? { backgroundImage: `url(${pokemon.images[1]})` } : { backgroundImage: `url(${pokemon.images[0]})` }} />
     </div>
   );
 };

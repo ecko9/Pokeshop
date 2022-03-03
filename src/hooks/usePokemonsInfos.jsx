@@ -2,7 +2,7 @@ import React from "react";
 
 const usePokemonsInfos = () => {
 
-  const [pokemonsListFormated, setPokemonsListFormated] = React.useState(null)
+  const [pokemonsInfos, setPokemonsInfos] = React.useState({ listFormated: null, listFormatedTmp: null })
   const [pokemonsList, setPokemonsList] = React.useState(null)
 
   React.useEffect(
@@ -12,6 +12,7 @@ const usePokemonsInfos = () => {
         fetch(`https://pokeapi.co/api/v2/pokemon`)
           .then(response1 => response1.json())
           .then(async (response1) => {
+
             fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=${response1.count}`)
               .then(response2 => response2.json())
               .then(response2 => setPokemonsList(response2.results))
@@ -63,13 +64,15 @@ const usePokemonsInfos = () => {
       }
 
       const fetchPokemonsInfos = async (pokemonsList, array = [], index = 0) => {
-        if (array.length === pokemonsList.length)
-          setPokemonsListFormated(array)
+        if (array.length === pokemonsList.length) {
+          setPokemonsInfos({ listFormated: array, listFormatedTmp: array })
+          return
+        }
 
         else {
 
           if (array.length === 50)
-            setPokemonsListFormated(array)
+            setPokemonsInfos({ listFormated: null, listFormatedTmp: array })
 
           fetch(`${pokemonsList[index].url}`)
             .then(response1 => response1.json())
@@ -95,7 +98,8 @@ const usePokemonsInfos = () => {
     }, [pokemonsList]
   )
 
-  return pokemonsListFormated
+  return pokemonsInfos
+
 };
 
 export default usePokemonsInfos;
