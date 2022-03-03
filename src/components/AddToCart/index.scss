@@ -1,5 +1,5 @@
 .AddToCart {
-
+  cursor: default;
   display: flex;
 
   .price {
@@ -12,8 +12,8 @@
 
     font-size: 25px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 30px rgb(0, 0, 0);
+    color: $white;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
   }
 
   .quantity {
@@ -33,9 +33,14 @@
       justify-content: center;
       align-items: center;
 
-      border: 2px solid rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba($white, 0.5);
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba($white, 0.5);
+      transition: 0.2s linear;
+
+      &:hover {
+        background-color: rgba($white, 0.8);
+      }
     }
 
     span {
@@ -51,12 +56,16 @@
     height: 100%;
     width: 30%;
 
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba($white, 0.5);
     border-radius: 10px 0 10px 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba($white, 0.5);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      background-color: rgba($white, 0.8);
+    }
   }
 }

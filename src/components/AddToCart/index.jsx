@@ -30,12 +30,12 @@ const AddToCart = ({ pokemon }) => {
       <span className='price'>{pokemon.price} €</span>
 
       <div className='quantity'>
-        <div className='remove-one' onClick={e => removeOneQuantity(e)}><i className="fa-solid fa-minus"></i></div>
+        <div className='remove-one link' onClick={e => removeOneQuantity(e)}><i className="fa-solid fa-minus"></i></div>
         <span>{quantity}</span>
-        <div className='add-one' onClick={e => addOneQuantity(e)}><i className="fa-solid fa-plus"></i></div>
+        <div className='add-one link' onClick={e => addOneQuantity(e)}><i className="fa-solid fa-plus"></i></div>
       </div>
 
-      <div className='btn-cart' onClick={e => addPokemonToCart(e)}>
+      <div className='btn-cart link' onClick={e => addPokemonToCart(e)}>
         <i className="fa-solid fa-cart-shopping fa-xl"></i>
       </div>
 

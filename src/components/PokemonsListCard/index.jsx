@@ -9,7 +9,7 @@ const PokemonsListCard = ({ pokemon }) => {
 
   return (
     <div
-      className='PokemonsListCard'
+      className='PokemonsListCard link'
       style={{ background: `linear-gradient(to top, ${pokemon.color}, white 50%)` }}
       onClick={e => navigate(`/pokemons/${pokemon.id}`)}
     >

@@ -5,7 +5,7 @@ import React from 'react';
 
 const Pokemons = ({ pokemonsInfos }) => {
 
-  const [displayRightCart, setDisplayRightCart] = React.useState(true)
+  const [displayRightCart, setDisplayRightCart] = React.useState(false)
 
   return (
     <div className='Pokemons'>

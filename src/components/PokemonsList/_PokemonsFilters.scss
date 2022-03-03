@@ -1,6 +1,6 @@
 .PokemonsFilters {
   width: 100%;
-  height: 5%;
+  height: 8%;
 
   display: flex;
   justify-content: center;
@@ -8,12 +8,16 @@
 
   input {
     width: 30%;
-    height: 100%;
+    height: 60%;
 
-    border: 2px solid $color-secondary;
+    border: 2px solid $white;
     border-radius: 10px;
+    outline: none;
+    box-shadow: 0 0 5px $color-secondary;
+    background-color: rgba($white, 0.8);
+
     &:focus {
-      background-color: lightblue;
+      border: 2px solid $white;
     }
   }
 }
