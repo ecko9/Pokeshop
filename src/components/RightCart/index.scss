@@ -1,27 +1,65 @@
 @import '../PokemonsRightCartCard/index.scss';
 
 .RightCart {
-  position: relative;
-  height: 100%;
+  position: fixed;
+  top: 18%;
+  height: 60%;
+ 
 
-  overflow-x: hidden;
-  overflow-y: scroll;
+  @media screen and (min-width: 800px) {
+    left: 75%;
+    width: 20%;
+  }
+  @media screen and (max-width: 799px) {
+    left: 45%;
+    width: 50%;
+  }
 
-  transition: width 0.5s linear;
+  overflow: hidden;
+  z-index: 1;
+  transition: opacity 0.5s linear;
+  background-color: rgba($white, 0.9);
+  border: 1px solid white;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+
+  h2 {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: $color-secondary;
+  }
+
+  .cart-items {
+    width: 90%;
+    flex: 2;
+
+    margin: 10px 0;
+    border: 1px solid white;
+    border-radius: 10px;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
   .payment {
     width: 100%;
 
-    border-bottom: 1px solid black;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     overflow: hidden;
 
     h3 {
@@ -30,7 +68,7 @@
 
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       text-align: center;
       
@@ -39,18 +77,20 @@
     }
 
     i {
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
 
       border-radius: 50%;
       color: $color-secondary;
       background-color: rgba($white, 0.5);
       box-shadow: 0 0 5px $color-secondary;
-      border: 1px solid $white;
+      border: 1px solid white;
 
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
+
+ 
 }

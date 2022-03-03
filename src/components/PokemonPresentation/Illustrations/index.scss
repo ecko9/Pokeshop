@@ -4,7 +4,7 @@
   @media screen and (min-width: 1000px) {
     width: 50%;
     height: 100%;
-    border-right: 1px solid black;
+    border-right: 1px solid $color-secondary;
   }
   @media screen and (max-width: 999px) {
     width: 100%;
@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $color-secondary;
   }
 
   .mini-img {
