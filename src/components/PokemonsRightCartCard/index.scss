@@ -8,6 +8,8 @@
   justify-content: space-evenly;
 
   border-bottom: 1px solid black;
+  transition: opacity 1s linear;
+  overflow: hidden;
 
   img {
     height: 100%;

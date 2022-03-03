@@ -1,12 +1,15 @@
 import React from 'react';
 
-const PokemonsRightCartCard = ({ pokemon }) => {
+const PokemonsRightCartCard = ({ pokemon, displayRightCart }) => {
   return (
-    <div className='PokemonsRightCartCard'>
+    <div
+      className='PokemonsRightCartCard'
+      style={displayRightCart ? { opacity: '1' } : { opacity: '0' }}
+    >
 
       <img src={`${pokemon.pokemonImage}`} alt="pokemon small" />
 
-      <p>
+      <p style={displayRightCart ? { opacity: '1' } : { opacity: '0' }}>
         <span className='quantity'>{pokemon.quantity}</span>
         {` x `}
         <span className='price'>{pokemon.pokemonPrice} €</span>
