@@ -1,8 +1,8 @@
-import PokemonsRightCartCard from 'components/PokemonsRightCartCard';
+import PokemonsCardSmall from 'components/PokemonsCardSmall';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const RightCart = ({ displayRightCart }) => {
+const NavCart = () => {
 
   const cart = useSelector(state => state.cartsReducer.cart)
   const [totalCartPrice, setTotalCartPrice] = React.useState(0)
@@ -15,22 +15,21 @@ const RightCart = ({ displayRightCart }) => {
     }, [cart]
   )
 
-
   return (
     <div
-      className='RightCart'
-      style={displayRightCart ? { opacity: '1' } : { opacity: '0' }}
+      className='NavCart'
+      style={{ opacity: '1' }}
     >
       <h2>Panier</h2>
 
       <div className='cart-items'>
-        {(cart && cart.length > 0) && cart.map(pokemon => (
-          <PokemonsRightCartCard key={pokemon.pokemonId} pokemon={pokemon} />
-        ))}
+        {(cart && cart.length > 0) ? cart.map(pokemon => (
+          <PokemonsCardSmall key={pokemon.pokemonId} pokemon={pokemon} />
+        )) : <span>Vide</span>}
       </div>
 
       <div className='payment'>
-        <h3>Total: <span>{totalCartPrice} €</span></h3>
+        <h3>Total: <span>{totalCartPrice}€</span></h3>
         <i className="fa-solid fa-money-bill-wave fa-lg link"></i>
       </div>
 
@@ -38,4 +37,4 @@ const RightCart = ({ displayRightCart }) => {
   );
 };
 
-export default RightCart;
+export default NavCart;

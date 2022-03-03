@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PokemonsRightCartCard = ({ pokemon }) => {
+const PokemonsCardSmall = ({ pokemon }) => {
   return (
-    <div className='PokemonsRightCartCard'>
+    <div className='PokemonsCardSmall'>
 
       <img src={`${pokemon.pokemonImage}`} alt={`small ${pokemon.name}`} />
 
@@ -19,4 +19,4 @@ const PokemonsRightCartCard = ({ pokemon }) => {
   );
 };
 
-export default PokemonsRightCartCard;
+export default PokemonsCardSmall;

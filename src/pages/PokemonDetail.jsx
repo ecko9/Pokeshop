@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import NavBar from 'components/NavBar';
 import PokemonPresentation from 'components/PokemonPresentation';
-import RightCart from 'components/RightCart';
+import NavCart from 'components/NavCart';
 
 
 const PokemonDetail = () => {
@@ -80,7 +80,7 @@ const PokemonDetail = () => {
           {pokemon !== null && pokemon !== undefined && <PokemonPresentation pokemon={pokemon} />}
         </div>
 
-        <RightCart displayRightCart={displayRightCart} />
+        {displayRightCart && <NavCart />}
 
       </div>
 

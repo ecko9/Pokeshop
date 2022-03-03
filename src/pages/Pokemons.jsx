@@ -1,5 +1,5 @@
 import NavBar from 'components/NavBar';
-import RightCart from 'components/RightCart';
+import NavCart from 'components/NavCart';
 import PokemonsList from 'components/PokemonsList';
 import React from 'react';
 
@@ -18,7 +18,7 @@ const Pokemons = ({ pokemonsInfos }) => {
           {pokemonsInfos.listFormatedTmp !== null && <PokemonsList pokemonsInfos={pokemonsInfos} />}
         </div>
 
-        <RightCart displayRightCart={displayRightCart} />
+        {displayRightCart && <NavCart />}
 
       </div>
 
