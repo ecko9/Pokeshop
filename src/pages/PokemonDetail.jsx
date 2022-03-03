@@ -9,7 +9,7 @@ const PokemonDetail = () => {
 
   const { id } = useParams()
   const [pokemon, setPokemon] = React.useState(null)
-  const [displayRightCart, setDisplayRightCart] = React.useState(true)
+  const [displayRightCart, setDisplayRightCart] = React.useState(false)
 
   React.useEffect(
     () => {

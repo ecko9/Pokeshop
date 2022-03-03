@@ -4,6 +4,7 @@
   @media screen and (min-width: 1000px) {
     width: 50%;
     height: 100%;
+    border-right: 1px solid black;
   }
   @media screen and (max-width: 999px) {
     width: 100%;
@@ -12,8 +13,6 @@
   
   display:flex;
   flex-wrap: wrap;
-
-  border-right: 1px solid black;
 
   .display-img {
     width: 100%;

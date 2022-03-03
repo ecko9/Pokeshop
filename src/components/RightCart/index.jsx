@@ -17,7 +17,7 @@ const RightCart = ({ displayRightCart }) => {
   )
 
   return (
-    <div className='RightCart' style={displayRightCart ? { width: '20%' } : { width: '0%' }}>
+    <div className='RightCart' style={displayRightCart ? { width: '20%', borderLeft: '1px solid black' } : { width: '0%' }}>
 
       <h3 style={displayRightCart ? { display: 'flex' } : { display: 'none' }}>Total: {totalCartPrice} €</h3>
 

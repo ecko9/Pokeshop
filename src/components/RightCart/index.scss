@@ -2,13 +2,11 @@
 
 .RightCart {
   position: relative;
-  width: 20%;
   height: 100%;
 
   overflow-x: hidden;
   overflow-y: scroll;
 
-  border-left: 1px solid black;
   transition: width 0.5s linear;
 
   h3 {
