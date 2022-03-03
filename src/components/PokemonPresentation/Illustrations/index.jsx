@@ -9,8 +9,13 @@ const Illustrations = ({ pokemon }) => {
 
       <div className='display-img' style={{ backgroundImage: `url(${pokemon.images[displayImageIndex]})` }} />
 
-      {pokemon && pokemon.images.map((img) => (
-        <div className="mini-img" key={img} style={{ backgroundImage: `url(${img})` }} />
+      {pokemon && pokemon.images.map((img, index) => (
+        <div
+          className="mini-img link"
+          key={img}
+          style={{ backgroundImage: `url(${img})` }}
+          onClick={e => setDisplayImageIndex(index)}
+        />
       ))}
 
     </div>
