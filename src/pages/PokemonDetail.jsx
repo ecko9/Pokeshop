@@ -74,14 +74,10 @@ const PokemonDetail = () => {
 
       <NavBar setDisplayRightCart={setDisplayRightCart} displayRightCart={displayRightCart} />
 
-      <div className='Shop'>
+      {displayRightCart && <NavCart />}
 
-        <div className='Pokemon'>
-          {pokemon !== null && pokemon !== undefined && <PokemonPresentation pokemon={pokemon} />}
-        </div>
-
-        {displayRightCart && <NavCart />}
-
+      <div className='Pokemon'>
+        {pokemon !== null && pokemon !== undefined && <PokemonPresentation pokemon={pokemon} />}
       </div>
 
       <div className='Footer' />

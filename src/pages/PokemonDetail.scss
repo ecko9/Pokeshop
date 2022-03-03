@@ -10,18 +10,13 @@
   display: flex;
   flex-direction: column;
 
-  .Shop {
+  .Pokemon {
     width: 100%;
     height: 80%;
 
     display: flex;
-
-    .Pokemon {
-      flex: 2;
-      height: 100%;
-    }
   }
-
+ 
   .Footer {
     width: 100%;
     height: 10%;

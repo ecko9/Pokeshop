@@ -12,14 +12,10 @@ const Pokemons = ({ pokemonsInfos }) => {
 
       <NavBar setDisplayRightCart={setDisplayRightCart} displayRightCart={displayRightCart} />
 
-      <div className='Shop'>
+      {displayRightCart && <NavCart />}
 
-        <div className='Items'>
-          {pokemonsInfos.listFormatedTmp !== null && <PokemonsList pokemonsInfos={pokemonsInfos} />}
-        </div>
-
-        {displayRightCart && <NavCart />}
-
+      <div className='Items'>
+        {pokemonsInfos.listFormatedTmp !== null && <PokemonsList pokemonsInfos={pokemonsInfos} />}
       </div>
 
       <div className='Footer' />

@@ -9,20 +9,14 @@
 
   display: flex;
   flex-direction: column;
-
-  .Shop {
+  
+  .Items {
     width: 100%;
     height: 80%;
 
     display: flex;
-    
-    .Items {
-      flex: 2;
-      height: 100%;
-
-      display: flex;
-    }
   }
+ 
 
   .Footer {
     width: 100%;
