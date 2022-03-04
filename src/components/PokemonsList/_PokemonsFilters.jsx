@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PokemonsFilters = ({ setPageList, pokemonsList, pokemonsListTmp, setPage }) => {
+const PokemonsFilters = ({ setPageList, allResults, setPage }) => {
 
   const [search, setSearch] = React.useState("")
 
@@ -8,21 +8,18 @@ const PokemonsFilters = ({ setPageList, pokemonsList, pokemonsListTmp, setPage }
     () => {
       setPage(0)
       if (search.length > 1 && (search !== "" || " " || "  "))
-        if (pokemonsList !== null)
-          setPageList(pokemonsList.filter(((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase()) === true)))
-        else
-          setPageList(pokemonsListTmp.filter(((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase()) === true)))
+        setPageList(allResults.filter(((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase()) === true)))
       else
-        setPageList(pokemonsListTmp.slice(0, 50))
+        setPageList(allResults.slice(0, 50))
       return
       // eslint-disable-next-line
-    }, [search, pokemonsList]
+    }, [search, allResults]
   )
 
   return (
     <div className='PokemonsFilters'>
       <input
-        name="search"
+        name="pokename"
         type="search"
         value={search}
         onChange={e => setSearch(e.target.value)}

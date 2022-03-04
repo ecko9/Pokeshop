@@ -45,6 +45,35 @@ const Infos = ({ pokemon }) => {
         return (
           <i className="fa-solid fa-wand-magic-sparkles"></i>
         )
+      case "psychic":
+        return (
+          <i className="fa-solid fa-eye"></i>
+        )
+      case "ice":
+        return (
+          <i className="fa-solid fa-icicles"></i>
+        )
+      case "steel":
+        return (
+          <i className="fa-solid fa-shield"></i>
+        )
+      case "ghost":
+        return (
+          <i className="fa-solid fa-ghost"></i>
+        )
+      case "rock":
+        return (
+          <i className="fa-solid fa-mountain"></i>
+        )
+      case "dragon":
+        return (
+          <i className="fa-solid fa-dragon"></i>
+        )
+      case "dark":
+        return (
+          <i class="fa-solid fa-moon"></i>
+        )
+
       default:
         return;
     }
@@ -56,8 +85,8 @@ const Infos = ({ pokemon }) => {
       <h2 className='name'>{pokemon.name}</h2>
 
       <div className='types'>
-        {pokemon.types.map(type => (
-          <span key={type}>
+        {pokemon.types.map((type, i) => (
+          <span key={i}>
             {setTypeSymbol(type)}
           </span>
         ))}

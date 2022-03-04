@@ -7,18 +7,15 @@ const PokemonList = ({ pokemonsInfos }) => {
 
   const [page, setPage] = React.useState(0)
   const resultsPerPage = 50
-  const [maxPage, setMaxPage] = React.useState(null)
-
+  const [maxPage, setMaxPage] = React.useState(1)
   const [pageList, setPageList] = React.useState(null)
+  const [allResults, setAllResults] = React.useState(null)
 
   React.useEffect(
     () => {
-      if (pokemonsInfos.listFormated !== null)
-        setPageList(pokemonsInfos.listFormated.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
-      else if (pokemonsInfos.listFormatedTmp !== null)
-        setPageList(pokemonsInfos.listFormatedTmp.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
-      else
-        return
+
+      if (allResults !== null)
+        setPageList(allResults.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
 
       return
       // eslint-disable-next-line
@@ -28,31 +25,49 @@ const PokemonList = ({ pokemonsInfos }) => {
   React.useEffect(
     () => {
       if (pokemonsInfos.listFormated !== null)
-        setMaxPage(Math.floor(pokemonsInfos.listFormated.length / resultsPerPage))
+        setAllResults(pokemonsInfos.listFormated)
+      else if (pokemonsInfos.listFormatedTmp !== null)
+        setAllResults(pokemonsInfos.listFormatedTmp)
+      else
+        return
       return
-    }, [pokemonsInfos.listFormated]
+    }, [pokemonsInfos.listFormatedTmp, pokemonsInfos.listFormated]
+  )
+
+  React.useEffect(
+    () => {
+      if (pageList !== null)
+        setMaxPage(Math.floor(allResults.length / resultsPerPage))
+      return
+      // eslint-disable-next-line
+    }, [pageList]
   )
 
   return (
     <div className='PokemonsList'>
-
-      {pokemonsInfos.listFormatedTmp !== null &&
+      {console.log(pageList)}
+      {pageList !== null &&
         <Pagination
           page={page} setPage={setPage}
           maxPage={maxPage}
         />}
 
-      {pokemonsInfos.listFormatedTmp !== null &&
+      {allResults !== null &&
         <PokemonsFilters
           setPageList={setPageList}
           setPage={setPage}
-          pokemonsListTmp={pokemonsInfos.listFormatedTmp}
-          pokemonsList={pokemonsInfos.listFormated}
+          allResults={allResults}
         />}
 
       {pageList !== null && pageList.map((pokemon) => (
         <PokemonsListCard key={pokemon.id} pokemon={pokemon} />
       ))}
+
+      {pageList !== null &&
+        <Pagination
+          page={page} setPage={setPage}
+          maxPage={maxPage}
+        />}
 
     </div>
   );

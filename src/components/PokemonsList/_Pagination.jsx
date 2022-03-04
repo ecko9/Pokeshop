@@ -8,11 +8,8 @@ const Pagination = ({ page, setPage, maxPage }) => {
   }
 
   const setNextPage = (e) => {
-    if (maxPage !== null && page < maxPage)
+    if (page < maxPage)
       setPage(page + 1)
-    else
-      if (page < 10)
-        setPage(page + 1)
   }
 
   return (
