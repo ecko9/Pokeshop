@@ -33,7 +33,7 @@ const PaymentSteps = () => {
   }
 
   const nextStep = (e) => {
-    if (step < 4)
+    if (step < 2)
       setStep(step + 1)
   }
 
