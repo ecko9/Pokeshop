@@ -1,5 +1,5 @@
 import PokemonsListCard from 'components/PokemonsListCard';
-import React from 'react';
+import React, { useRef } from 'react';
 import Pagination from './_Pagination';
 import PokemonsFilters from './_PokemonsFilters';
 
@@ -10,10 +10,11 @@ const PokemonList = ({ pokemonsInfos }) => {
   const [maxPage, setMaxPage] = React.useState(1)
   const [pageList, setPageList] = React.useState(null)
   const [allResults, setAllResults] = React.useState(null)
+  const pokemonListElement = useRef()
 
   React.useEffect(
     () => {
-
+      pokemonListElement.current.scrollTo(0, 0)
       if (allResults !== null)
         setPageList(allResults.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
 
@@ -44,7 +45,7 @@ const PokemonList = ({ pokemonsInfos }) => {
   )
 
   return (
-    <div className='PokemonsList'>
+    <div className='PokemonsList' ref={pokemonListElement}>
 
       {pageList !== null &&
         <Pagination
