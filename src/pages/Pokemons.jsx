@@ -18,7 +18,7 @@ const Pokemons = ({ pokemonsInfos }) => {
         {pokemonsInfos.listFormatedTmp !== null && <PokemonsList pokemonsInfos={pokemonsInfos} />}
       </div>
 
-      <div className='Footer' />
+      <div className='bg-overlay'></div>
 
     </div>
   );

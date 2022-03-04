@@ -9,18 +9,28 @@
 
   display: flex;
   flex-direction: column;
+
+  background-image: url('../../public/all-pokémons3.webp');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
   
+  .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba($white, 0.5);
+  }
+
   .Items {
     width: 100%;
-    height: 80%;
+    height: 85%;
+    z-index: 1;
 
     display: flex;
   }
  
-
-  .Footer {
-    width: 100%;
-    height: 10%;
-    background-color: red;
-  }
 }

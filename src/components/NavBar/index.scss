@@ -6,9 +6,9 @@
   justify-content: flex-end;
   overflow: hidden;
 
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 0 10px $black;
-  background: linear-gradient(to bottom, rgba($color-ternary, 0.8), $white 100%);
+  background: linear-gradient(to top, rgba($white, 0.5), rgba($white, 0.9) 100%);
 
   h1 {
     width: 50%;
@@ -25,9 +25,8 @@
       font-size: 2rem;
     }
 
-    font-family: $font-primary, $font-secondary, Impact, sans-serif;
+    font-family: $font-primary, $font-secondary, sans-serif;
     color: $color-primary;
-    letter-spacing: -1px;
     text-shadow: 3px 1px $color-secondary, -1px 1px $color-secondary;
 
     span {
@@ -47,7 +46,7 @@
     justify-content: center;
     align-items: center;
 
-    color: $color-secondary;
+    color: $black;
 
     i {
       height: 50px;
@@ -62,7 +61,7 @@
       text-align: center;
 
       &:hover {
-        color: $white;
+        color: $color-secondary;
         box-shadow: 0 0 5px $color-secondary;
       }
     }
