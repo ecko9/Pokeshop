@@ -50,24 +50,20 @@
     color: $color-secondary;
 
     i {
+      height: 50px;
+      width: 50px;
+
       display: flex;
       justify-content: center;
       align-items: center;
 
-      @media screen and (min-height: 600px) {
-        &::before {
-          transition: box-shadow 0.3s linear;
-          padding: 20px 10px 20px 10px;
-          border-radius: 50%;
-          text-align: center;
-        }
+      transition: box-shadow 0.3s linear; 
+      border-radius: 50%;
+      text-align: center;
 
-        &:hover {
-          color: $white;
-          &::before { 
-            box-shadow: 0 0 5px $color-secondary;
-          }
-        }
+      &:hover {
+        color: $white;
+        box-shadow: 0 0 5px $color-secondary;
       }
     }
   }

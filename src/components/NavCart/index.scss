@@ -3,15 +3,21 @@
 .NavCart {
   position: fixed;
   top: 18%;
-  height: 60%;
 
   @media screen and (min-width: 800px) {
-    left: 75%;
-    width: 20%;
+    left: 65%;
+    width: 30%;
+    height: 60%;
   }
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 799px) and (min-width: 300px) {
     left: 45%;
     width: 50%;
+    height: 60%;
+  }
+  @media screen and (max-width: 299px) {
+    left: 35%;
+    width: 60%;
+    height: 70%;
   }
 
   display: flex;
@@ -70,6 +76,13 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 
+    @media screen and (min-width: 400px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 399px) {
+      font-size: 13px;
+    }
+
     h3 {
       flex: 1;
       padding: 10px;
@@ -97,6 +110,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      transition : 0.2s linear;
+
+      &:hover {
+        background-color: $white;
+        box-shadow: 0 0 10px $color-secondary;
+      }
     }
   }
 

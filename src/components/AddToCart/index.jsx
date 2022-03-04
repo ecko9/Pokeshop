@@ -18,9 +18,20 @@ const AddToCart = ({ pokemon }) => {
     setQuantity(quantity + 1)
   }
 
+  const chooseImg = () => {
+    if (pokemon.images[1])
+      return pokemon.images[1]
+    else if (pokemon.images[0])
+      return pokemon.images[0]
+    else if (pokemon.images[2])
+      return pokemon.images[2]
+    else
+      return ""
+  }
+
   const addPokemonToCart = (e) => {
     e.stopPropagation()
-    dispatch(addToCart(pokemon.id, pokemon.name, pokemon.color, pokemon.price, pokemon.images[1], quantity))
+    dispatch(addToCart(pokemon.id, pokemon.name, pokemon.color, pokemon.price, chooseImg(), quantity))
     setQuantity(1)
   }
 

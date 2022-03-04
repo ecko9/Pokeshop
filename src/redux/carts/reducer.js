@@ -1,26 +1,25 @@
 import { ADD_TO_CART, REMOVE_TO_CART } from "./types";
 
 const initialState = {
-  cart: []
+  cart: localStorage['cart'] ? JSON.parse(localStorage['cart']) : []
 }
 
 const addQuantityOrItemToCart = (cart, item) => {
   let stored = false
 
   let cartTmp = cart.map((cartItem) => {
-
     if (cartItem.pokemonId === item.pokemonId) {
       stored = true
       return { pokemonId: item.pokemonId, pokemonName: item.pokemonName, pokemonColor: item.pokemonColor, pokemonPrice: item.pokemonPrice, pokemonImage: item.pokemonImage, quantity: cartItem.quantity + item.quantity }
     }
     else
       return cartItem
-
   })
 
   if (stored === false)
     cartTmp.push(item)
 
+  localStorage['cart'] = JSON.stringify(cartTmp)
   return cartTmp
 }
 
@@ -30,12 +29,13 @@ const removeQuantityOrItemToCart = (cart, item) => {
       if (cartItem.quantity - item.quantity <= 0)
         return null
       else
-        return { pokemonId: item.pokemonId, pokemonName: item.pokemonName, pokemonColor: item.pokemonColor, pokemonPrice: item.pokemonPrice, pokemonImage: item.pokemonImage, quantity: cartItem.quantity - item.quantity }
+        return { pokemonId: cartItem.pokemonId, pokemonName: cartItem.pokemonName, pokemonColor: cartItem.pokemonColor, pokemonPrice: cartItem.pokemonPrice, pokemonImage: cartItem.pokemonImage, quantity: cartItem.quantity - item.quantity }
     }
     else
       return cartItem
   })
 
+  localStorage['cart'] = JSON.stringify(cartTmp.filter(x => x !== null))
   return cartTmp.filter(x => x !== null)
 }
 

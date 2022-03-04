@@ -45,7 +45,7 @@ const PokemonList = ({ pokemonsInfos }) => {
 
   return (
     <div className='PokemonsList'>
-      {console.log(pageList)}
+
       {pageList !== null &&
         <Pagination
           page={page} setPage={setPage}

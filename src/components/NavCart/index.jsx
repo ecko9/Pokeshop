@@ -30,7 +30,7 @@ const NavCart = () => {
 
       <div className='payment'>
         <h3>Total: <span>{totalCartPrice}€</span></h3>
-        <i className="fa-solid fa-money-bill-wave fa-lg link"></i>
+        <i className="fa-solid fa-money-bill-wave fa-md link"></i>
       </div>
 
     </div>

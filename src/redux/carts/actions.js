@@ -7,7 +7,7 @@ export const addToCart = (pokemonId, pokemonName, pokemonColor, pokemonPrice, po
   }
 }
 
-export const RemoveToCart = (pokemonId, quantity) => {
+export const removeToCart = (pokemonId, quantity) => {
   return {
     type: REMOVE_TO_CART,
     item: { pokemonId, quantity }
