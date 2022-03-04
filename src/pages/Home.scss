@@ -5,18 +5,15 @@
 
   background-image: url("../../public/all-pokémons3.webp");
   background-repeat: no-repeat;
-  background-position: center right;
-
-  background-size: auto 100%;
-  background-position-x: right;
+  background-position: top right;
+  background-size: cover;
 
   .welcome {
     width: 100%;
     height: 100%;
 
-    z-index: 1;
     overflow: hidden;
-    background-color: rgba($color-ternary, 0.4);
+    background-color: rgba($white, 0.5);
 
     h1 {
       height: 30%;
@@ -37,7 +34,7 @@
       justify-content: center;
       align-items: flex-end;
 
-      font-family: $font-primary, $font-secondary, Impact, sans-serif;
+      font-family: $font-primary, $font-secondary, sans-serif;
       color: $color-primary;
       letter-spacing: -1px;
       text-shadow: 8px 1px $color-secondary, -2px 1px $color-secondary, -2px -1px $color-secondary;
@@ -84,13 +81,13 @@
       span {
         @media screen and (min-width: 1000px) {
           height: 50px;
-        padding: 30px;
-        font-size: 1.5rem;
+          padding: 30px;
+          font-size: 1.5rem;
         }
         @media screen and (min-width: 600px) and (max-width: 999px){
           height: 50px;
-        padding: 30px;
-        font-size: 1.5rem;
+          padding: 30px;
+          font-size: 1.5rem;
         }
         @media screen and (max-width: 599px) {
           height: 30px;
@@ -102,18 +99,16 @@
         align-items: center;
         justify-content: center;
 
-        font-family: $font-secondary, Impact, sans-serif;
-        border: 2px solid rgba($color-primary, 0.8);
+        font-family: $font-secondary, sans-serif;
+        color: $color-secondary;
         border-radius: 10px;
-        background-color: $color-primary;
-        box-shadow: 0 0 20px rgba($black, 0.8);
-
+        background-color: rgba($white, 0.8);
+        box-shadow: 0 0 10px rgba($black, 0.8);
         transition: 0.5s linear;
 
         &:hover {
-          background-color: $white;
-          border: 2px solid rgba($white, 0.8);
-          box-shadow: 0 0 20px rgba($color-primary, 0.8);
+          background-color: $color-primary;
+          box-shadow: 0 0 10px $color-secondary;
         }
       }
     }
