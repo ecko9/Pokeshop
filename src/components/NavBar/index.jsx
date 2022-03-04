@@ -12,7 +12,12 @@ const NavBar = ({ setDisplayRightCart, displayRightCart }) => {
       </h1>
 
       <div className='NavCartBtn'>
-        <i className="fa-solid fa-cart-shopping fa-xl link" onClick={e => setDisplayRightCart(!displayRightCart)}></i>
+        {displayRightCart !== null &&
+          <i
+            className="fa-solid fa-cart-shopping fa-xl link"
+            onClick={e => setDisplayRightCart(!displayRightCart)}
+          />
+        }
       </div>
 
     </div>

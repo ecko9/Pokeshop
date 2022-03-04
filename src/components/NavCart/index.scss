@@ -29,6 +29,7 @@
   background-color: rgba($white, 0.9);
   border: 1px solid white;
   border-radius: 10px;
+  box-shadow: 0 0 10px $black;
 
   h2 {
     height: 10%;
@@ -57,7 +58,6 @@
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
-
   }
 
   .payment {
@@ -93,7 +93,6 @@
       align-items: center;
       text-align: center;
       
-      transition: opacity 0.3s linear;
       color: $color-secondary;
     }
 

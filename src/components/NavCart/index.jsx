@@ -1,11 +1,13 @@
 import PokemonsCardSmall from 'components/PokemonsCardSmall';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const NavCart = () => {
 
   const cart = useSelector(state => state.cartsReducer.cart)
   const [totalCartPrice, setTotalCartPrice] = React.useState(0)
+  const navigate = useNavigate()
 
   React.useEffect(
     () => {
@@ -30,7 +32,7 @@ const NavCart = () => {
 
       <div className='payment'>
         <h3>Total: <span>{totalCartPrice}€</span></h3>
-        <i className="fa-solid fa-money-bill-wave fa-md link"></i>
+        <i className="fa-solid fa-money-bill-wave fa-md link" onClick={e => navigate('/payment')}></i>
       </div>
 
     </div>

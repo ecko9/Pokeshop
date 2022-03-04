@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Pokemons from 'pages/Pokemons';
 import PokemonDetail from 'pages/PokemonDetail';
+import Payment from 'pages/Payment';
 import usePokemonsInfos from 'hooks/usePokemonsInfos';
+
 
 const App = () => {
 
@@ -16,6 +18,7 @@ const App = () => {
           <Route path='/' exact element={<Home />} />
           <Route path='/pokemons' exact element={<Pokemons pokemonsInfos={pokemonsInfos} />} />
           <Route path='/pokemons/:id' exact element={<PokemonDetail />} />
+          <Route path='/payment' exact element={<Payment />} />
           <Route path='*' element={<Pokemons pokemonsInfos={pokemonsInfos} />} />
         </Routes>
       </Router>
