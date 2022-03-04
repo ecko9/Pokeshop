@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Mouse+Memoirs&display=swap');
-
-$font-primary: 'Mouse Memoirs';
-$font-secondary: 'Luckiest Guy';
 //font-family: 'Luckiest Guy', cursive;
 //font-family: 'Mouse Memoirs', sans-serif;
 $color-primary: rgb(255, 238, 0);
@@ -11,6 +7,19 @@ $color-ternary: rgba(238, 26, 26);
 $white: rgb(243, 242, 236);
 $black: rgb(20, 20, 20);
 
+
+@font-face {
+  font-family: "Luckiest Guy";
+  src: url("../../public/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf") format("truetype")
+ }
+
+ @font-face {
+  font-family: "Mouse Memoirs";
+  src: url("../../public/fonts/Mouse_Memoirs/MouseMemoirs-Regular.ttf") format("truetype")
+ }
+
+ $font-primary: 'Mouse Memoirs';
+ $font-secondary: 'Luckiest Guy';
 
 * {
   box-sizing: border-box;
