@@ -10,10 +10,15 @@
     justify-content: center;
     align-items: center;
 
-    font-size: 25px;
-    font-weight: bold;
+    @media screen and (min-width: 400px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 399px) {
+      font-size: 25px;
+    }
+
     color: $white;
-    text-shadow: 0 0 5px rgb(0, 0, 0);
+    text-shadow: 0 0 2px rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px rgb(0, 0, 0);
   }
 
   .quantity {
@@ -27,7 +32,13 @@
     .add-one, .remove-one {
       height: 20px;
       width: 20px;
-      padding: 10px;
+      
+      @media screen and (min-width: 400px) {
+        padding: 10px;
+      }
+      @media screen and (max-width: 399px) {
+        padding: 5px;
+      }
 
       display: flex;
       justify-content: center;

@@ -15,6 +15,9 @@ const PokemonsListCard = ({ pokemon }) => {
     >
 
       <div className='header' style={{ backgroundColor: `${pokemon.color}` }} />
+
+      <span className='pokemon-id'>{`#${pokemon.id}`}</span>
+
       <Infos pokemon={pokemon} />
       <AddToCart pokemon={pokemon} />
 

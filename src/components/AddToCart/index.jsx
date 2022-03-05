@@ -38,7 +38,7 @@ const AddToCart = ({ pokemon }) => {
   return (
     <div className='AddToCart' onClick={e => e.stopPropagation()}>
 
-      <span className='price'>{pokemon.price} €</span>
+      <span className='price'>{pokemon.price}€</span>
 
       <div className='quantity'>
         <div className='remove-one link' onClick={e => removeOneQuantity(e)}><i className="fa-solid fa-minus"></i></div>

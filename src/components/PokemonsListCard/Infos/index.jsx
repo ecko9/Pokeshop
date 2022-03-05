@@ -6,77 +6,55 @@ const Infos = ({ pokemon }) => {
   const setTypeSymbol = (type) => {
     switch (type) {
       case "grass":
-        return (
-          <i className="fa-brands fa-pagelines"></i>
-        )
+        return (<i className="fa-brands fa-pagelines"></i>)
       case "poison":
-        return (
-          <i className="fa-solid fa-skull-crossbones"></i>
-        )
+        return (<i className="fa-solid fa-skull-crossbones"></i>)
       case "fire":
-        return (
-          <i className="fa-solid fa-fire"></i>
-        )
+        return (<i className="fa-solid fa-fire"></i>)
       case "flying":
-        return (
-          <i className="fa-solid fa-feather-pointed"></i>
-        )
+        return (<i className="fa-solid fa-feather-pointed"></i>)
       case "water":
-        return (
-          <i className="fa-solid fa-droplet"></i>
-        )
+        return (<i className="fa-solid fa-droplet"></i>)
       case "bug":
-        return (
-          <i className="fa-solid fa-bug"></i>
-        )
+        return (<i className="fa-solid fa-bug"></i>)
       case "ground":
-        return (
-          <i className="fa-solid fa-border-all"></i>
-        )
+        return (<i className="fa-solid fa-border-all"></i>)
       case "normal":
-        return (
-          <i className="fa-solid fa-person"></i>
-        )
+        return (<i className="fa-solid fa-person"></i>)
       case "electric":
-        return (
-          <i className="fa-solid fa-bolt-lightning"></i>
-        )
+        return (<i className="fa-solid fa-bolt-lightning"></i>)
       case "fairy":
-        return (
-          <i className="fa-solid fa-wand-magic-sparkles"></i>
-        )
+        return (<i className="fa-solid fa-wand-magic-sparkles"></i>)
       case "psychic":
-        return (
-          <i className="fa-solid fa-eye"></i>
-        )
+        return (<i className="fa-solid fa-eye"></i>)
       case "ice":
-        return (
-          <i className="fa-solid fa-icicles"></i>
-        )
+        return (<i className="fa-solid fa-icicles"></i>)
       case "steel":
-        return (
-          <i className="fa-solid fa-shield"></i>
-        )
+        return (<i className="fa-solid fa-shield"></i>)
       case "ghost":
-        return (
-          <i className="fa-solid fa-ghost"></i>
-        )
+        return (<i className="fa-solid fa-ghost"></i>)
       case "rock":
-        return (
-          <i className="fa-solid fa-mountain"></i>
-        )
+        return (<i className="fa-solid fa-mountain"></i>)
       case "dragon":
-        return (
-          <i className="fa-solid fa-dragon"></i>
-        )
+        return (<i className="fa-solid fa-dragon"></i>)
       case "dark":
-        return (
-          <i class="fa-solid fa-moon"></i>
-        )
-
+        return (<i className="fa-solid fa-moon"></i>)
+      case "fighting":
+        return (<i className="fa-solid fa-hand-fist"></i>)
       default:
         return;
     }
+  }
+
+  const chooseImg = () => {
+    if (pokemon.images[1])
+      return pokemon.images[1]
+    else if (pokemon.images[0])
+      return pokemon.images[0]
+    else if (pokemon.images[2])
+      return pokemon.images[2]
+    else
+      return ""
   }
 
   return (
@@ -94,7 +72,7 @@ const Infos = ({ pokemon }) => {
 
       <Characteristics pokemon={pokemon} />
 
-      <div className='image' style={pokemon.images[1] ? { backgroundImage: `url(${pokemon.images[1]})` } : { backgroundImage: `url(${pokemon.images[0]})` }} />
+      <div className='image' style={{ backgroundImage: `url(${chooseImg()})` }} />
     </div>
   );
 };
