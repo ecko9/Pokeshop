@@ -14,17 +14,6 @@ const PokemonList = ({ pokemonsInfos }) => {
 
   React.useEffect(
     () => {
-      pokemonListElement.current.scrollTo(0, 0)
-      if (allResults !== null)
-        setPageList(allResults.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
-
-      return
-      // eslint-disable-next-line
-    }, [page, resultsPerPage, allResults]
-  )
-
-  React.useEffect(
-    () => {
       if (pokemonsInfos.listFormated !== null)
         setAllResults(pokemonsInfos.listFormated)
       else if (pokemonsInfos.listFormatedTmp !== null)
@@ -32,16 +21,19 @@ const PokemonList = ({ pokemonsInfos }) => {
       else
         return
       return
-    }, [pokemonsInfos.listFormatedTmp, pokemonsInfos.listFormated]
+    }, [pokemonsInfos]
   )
 
   React.useEffect(
     () => {
-      if (pageList !== null)
+      pokemonListElement.current.scrollTo(0, 0)
+      if (allResults !== null) {
+        setPageList(allResults.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
         setMaxPage(Math.floor(allResults.length / resultsPerPage))
+      }
       return
       // eslint-disable-next-line
-    }, [pageList]
+    }, [page, resultsPerPage, allResults]
   )
 
   return (
