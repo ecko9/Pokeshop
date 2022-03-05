@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddToCart from '../AddToCart';
-import Infos from './Infos';
+import PokemonInfos from './_PokemonInfos';
+
 
 const PokemonsListCard = ({ pokemon }) => {
 
@@ -18,7 +19,7 @@ const PokemonsListCard = ({ pokemon }) => {
 
       <span className='pokemon-id'>{`#${pokemon.id}`}</span>
 
-      <Infos pokemon={pokemon} />
+      <PokemonInfos pokemon={pokemon} />
       <AddToCart pokemon={pokemon} />
 
     </div>

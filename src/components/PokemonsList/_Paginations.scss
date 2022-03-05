@@ -1,32 +1,29 @@
 .Pagination {
-  width: 100%;
+  width: 50%;
+  min-width: 200px;
   height: 10%;
+  min-height: 50px;
   margin: 10px 0;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   .page {
-    width: 10%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    box-shadow: 0 0 5px $color-secondary;
+    background-color: rgba($white, 0.8);
+    text-align: center;
     
     display: flex;
     justify-content: center;
     align-items: center;
-
-    span {
-      padding: 15px 20px 15px 20px;
-      border-radius: 50%;
-      box-shadow: 0 0 5px $color-secondary;
-      background-color: rgba($white, 0.8);
-      text-align: center;
-    }
   }
 
   .btn-left, .btn-right {
-    width: 20%;
-    height: 100%;
     color: $color-secondary;
     
     display: flex;
@@ -34,18 +31,21 @@
     align-items: center;
 
     i {
-      text-align: center;
-      &::before {
-        transition: box-shadow 0.3s linear;
-        padding: 10px 15px 10px 15px;
-        border-radius: 50%;
-        text-align: center;
-      }
+      width: 40px;
+      height: 40px;
+
+      transition: 0.3s linear;
+      border-radius: 50%;
+      box-shadow: 0 0 5px $color-secondary;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
-        &::before { 
-          box-shadow: 0 0 5px $color-secondary;
-        }
+        background-color: rgba($white, 0.8);
+        width: 50px;
+        height: 50px;
       }
     }
   }

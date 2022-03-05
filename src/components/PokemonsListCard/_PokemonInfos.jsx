@@ -1,7 +1,7 @@
 import React from 'react';
-import Characteristics from './_Characteristics';
+import Characteristics from '../PokemonPresentation/Characteristics/index';
 
-const Infos = ({ pokemon }) => {
+const PokemonInfos = ({ pokemon }) => {
 
   const setTypeSymbol = (type) => {
     switch (type) {
@@ -58,7 +58,7 @@ const Infos = ({ pokemon }) => {
   }
 
   return (
-    <div className='Infos'>
+    <div className='PokemonInfos'>
 
       <h2 className='name'>{pokemon.name}</h2>
 
@@ -77,4 +77,4 @@ const Infos = ({ pokemon }) => {
   );
 };
 
-export default Infos;
+export default PokemonInfos;

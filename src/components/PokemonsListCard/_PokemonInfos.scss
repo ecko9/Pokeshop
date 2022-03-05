@@ -1,6 +1,6 @@
-@import './Characteristics';
+@import '../PokemonPresentation/Characteristics/index.scss';
 
-.Infos {
+.PokemonInfos {
   position: relative;
   height: 70%;
   width: 100%;
@@ -8,6 +8,11 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
+
+  .Characteristics {
+    width: 100%;
+    height: 79%;
+  }
 
   .name {
     width: 100%;
