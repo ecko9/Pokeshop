@@ -20,7 +20,7 @@ const PokemonList = ({ pokemonsInfos }) => {
 
       return
       // eslint-disable-next-line
-    }, [page, resultsPerPage]
+    }, [page, resultsPerPage, allResults]
   )
 
   React.useEffect(
