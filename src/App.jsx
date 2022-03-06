@@ -9,17 +9,17 @@ import usePokemonsInfos from 'hooks/usePokemonsInfos';
 
 const App = () => {
 
-  const pokemonsInfos = usePokemonsInfos()
+  const pokemonsListFormated = usePokemonsInfos()
 
   return (
     <div className='App'>
       <Router>
         <Routes>
           <Route path='/' exact element={<Home />} />
-          <Route path='/pokemons' exact element={<Pokemons pokemonsInfos={pokemonsInfos} />} />
+          <Route path='/pokemons' exact element={<Pokemons pokemonsListFormated={pokemonsListFormated} />} />
           <Route path='/pokemons/:id' exact element={<PokemonDetail />} />
           <Route path='/payment' exact element={<Payment />} />
-          <Route path='*' element={<Pokemons pokemonsInfos={pokemonsInfos} />} />
+          <Route path='*' element={<Pokemons pokemonsListFormated={pokemonsListFormated} />} />
         </Routes>
       </Router>
     </div>

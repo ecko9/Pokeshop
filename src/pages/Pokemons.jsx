@@ -3,7 +3,7 @@ import NavCart from 'components/NavCart';
 import PokemonsList from 'components/PokemonsList';
 import React from 'react';
 
-const Pokemons = ({ pokemonsInfos }) => {
+const Pokemons = ({ pokemonsListFormated }) => {
 
   const [displayRightCart, setDisplayRightCart] = React.useState(false)
 
@@ -15,7 +15,7 @@ const Pokemons = ({ pokemonsInfos }) => {
       {displayRightCart && <NavCart />}
 
       <div className='Items'>
-        {pokemonsInfos.listFormatedTmp !== null && <PokemonsList pokemonsInfos={pokemonsInfos} />}
+        {pokemonsListFormated !== null && <PokemonsList pokemonsListFormated={pokemonsListFormated} />}
       </div>
 
       <div className='bg-overlay'></div>

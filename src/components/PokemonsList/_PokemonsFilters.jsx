@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PokemonsFilters = ({ setPageList, allResults, setPage }) => {
+const PokemonsFilters = ({ setPageList, pokemonsListFormated, setPage }) => {
 
   const [search, setSearch] = React.useState("")
 
@@ -8,12 +8,12 @@ const PokemonsFilters = ({ setPageList, allResults, setPage }) => {
     () => {
       setPage(0)
       if (search.length > 1 && (search !== "" || " " || "  "))
-        setPageList(allResults.filter(((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase()) === true)))
+        setPageList(pokemonsListFormated.filter(((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase()) === true)))
       else
-        setPageList(allResults.slice(0, 50))
+        setPageList(pokemonsListFormated.slice(0, 50))
       return
       // eslint-disable-next-line
-    }, [search, allResults]
+    }, [search, pokemonsListFormated]
   )
 
   return (

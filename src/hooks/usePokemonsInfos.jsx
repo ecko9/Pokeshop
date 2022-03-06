@@ -2,7 +2,7 @@ import React from "react";
 
 const usePokemonsInfos = () => {
 
-  const [pokemonsInfos, setPokemonsInfos] = React.useState({ listFormated: null, listFormatedTmp: null })
+  const [listFormated, setListFormated] = React.useState(null)
   const [pokemonsList, setPokemonsList] = React.useState(null)
 
   React.useEffect(
@@ -64,15 +64,12 @@ const usePokemonsInfos = () => {
       }
 
       const fetchPokemonsInfos = async (pokemonsList, array = [], index = 0) => {
-        if (array.length === pokemonsList.length) {
-          setPokemonsInfos({ listFormated: array, listFormatedTmp: array })
+        if (index === pokemonsList.length) {
           return
         }
-
         else {
-
-          if (array.length === 50)
-            setPokemonsInfos({ listFormated: null, listFormatedTmp: array })
+          if (index === 50)
+            setListFormated(array)
 
           fetch(`${pokemonsList[index].url}`)
             .then(response1 => response1.json())
@@ -83,7 +80,7 @@ const usePokemonsInfos = () => {
                 .then((response2) => {
 
                   array.push(formatedPokemonInfos(response1, response2))
-                  return fetchPokemonsInfos(pokemonsList, array, index + 1)
+                  fetchPokemonsInfos(pokemonsList, array, index + 1)
                 })
                 .catch(error => console.error(error))
             })
@@ -98,7 +95,7 @@ const usePokemonsInfos = () => {
     }, [pokemonsList]
   )
 
-  return pokemonsInfos
+  return listFormated
 
 };
 

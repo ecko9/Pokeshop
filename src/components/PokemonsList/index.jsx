@@ -3,37 +3,24 @@ import React, { useRef } from 'react';
 import Pagination from './_Pagination';
 import PokemonsFilters from './_PokemonsFilters';
 
-const PokemonList = ({ pokemonsInfos }) => {
+const PokemonList = ({ pokemonsListFormated }) => {
 
-  const [page, setPage] = React.useState(0)
   const resultsPerPage = 50
+  const [page, setPage] = React.useState(0)
   const [maxPage, setMaxPage] = React.useState(1)
   const [pageList, setPageList] = React.useState(null)
-  const [allResults, setAllResults] = React.useState(null)
   const pokemonListElement = useRef()
 
   React.useEffect(
     () => {
-      if (pokemonsInfos.listFormated !== null)
-        setAllResults(pokemonsInfos.listFormated)
-      else if (pokemonsInfos.listFormatedTmp !== null)
-        setAllResults(pokemonsInfos.listFormatedTmp)
-      else
-        return
-      return
-    }, [pokemonsInfos]
-  )
-
-  React.useEffect(
-    () => {
       pokemonListElement.current.scrollTo(0, 0)
-      if (allResults !== null) {
-        setPageList(allResults.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
-        setMaxPage(Math.floor(allResults.length / resultsPerPage))
+      if (pokemonsListFormated !== null) {
+        setPageList(pokemonsListFormated.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
+        setMaxPage(Math.floor(pokemonsListFormated.length / resultsPerPage))
       }
       return
       // eslint-disable-next-line
-    }, [page, resultsPerPage, allResults]
+    }, [page, resultsPerPage, pokemonsListFormated]
   )
 
   return (
@@ -45,11 +32,11 @@ const PokemonList = ({ pokemonsInfos }) => {
           maxPage={maxPage}
         />}
 
-      {allResults !== null &&
+      {pokemonsListFormated !== null &&
         <PokemonsFilters
           setPageList={setPageList}
           setPage={setPage}
-          allResults={allResults}
+          pokemonsListFormated={pokemonsListFormated}
         />}
 
       {pageList !== null && pageList.map((pokemon) => (
