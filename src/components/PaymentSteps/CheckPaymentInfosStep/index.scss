@@ -1,9 +1,7 @@
 .CheckPaymentInfosStep {
   width: 90%;
   height: 70%;
-
   margin: 10px 0;
-  text-align: center;
 
   border: 1px solid white;
   border-radius: 10px;
@@ -16,4 +14,69 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 
+  .resume-transaction {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+
+    overflow: hidden;
+
+    p {
+      height: 20%;
+
+      @media screen and (min-width: 600px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 599px) {
+        font-size: 12px;
+      }
+    }
+    .price {
+      height: 40%;
+      font-size: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $color-secondary;
+    }
+  }
+
+  .payment-infos {
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    span {
+      align-self: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    input {
+      width: 50%;
+      min-width: 150px;
+      height: 30%;
+      
+      border-radius: 10px;
+      border: 2px solid $white;
+      outline: none;
+      box-shadow: 0 0 5px $color-secondary;
+      background-color: rgba($white, 0.8);
+      text-align: center;
+  
+      &:focus {
+        border: 2px solid $white;
+      }
+    }
+  }
+  
 }

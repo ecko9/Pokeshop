@@ -1,0 +1,62 @@
+.StepChange {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+
+  .btn-check, .btn-prev {
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      height: 100%;
+      width: 80px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 10px;
+
+      &:hover {
+        border: 2px solid $white;
+        box-shadow: 0 0 8px $white;
+      }
+    }
+  }
+
+  .btn-prev {
+    i {
+      background-color: $color-secondary;
+      color: $white;
+    }
+  }
+  .valid {
+    i {
+      background-color: $color-secondary;
+      color: $white;
+    }   
+  }
+  .not-valid {
+    i {
+      background-color: $color-ternary;
+      color: $black;
+    }    
+  }
+
+  h3 {
+    flex: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    
+    color: $color-secondary;
+  }
+}
