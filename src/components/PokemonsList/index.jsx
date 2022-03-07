@@ -31,7 +31,7 @@ const PokemonList = () => {
 
               fetch(`${response1.species.url}`)
                 .then(response2 => response2.json())
-                .then((response2) => {
+                .then(async (response2) => {
 
                   array.push(formatedPokemonInfos(response1, response2))
                   return fetchPokemonsInfos(pokemonsList, array, index + 1)
