@@ -9,7 +9,7 @@ const PokemonList = () => {
 
   const resultsPerPage = 25
   const [page, setPage] = React.useState(0)
-  const [maxPage, setMaxPage] = React.useState(1)
+  const [maxPage, setMaxPage] = React.useState(2)
   const [pageList, setPageList] = React.useState(null)
   const pokemonsListFormated = useSelector(state => state.pokemonsReducer.pokemonsList)
   const loading = useSelector(state => state.pokemonsReducer.loading)
@@ -54,7 +54,7 @@ const PokemonList = () => {
 
       pokemonListElement.current.scrollTo(0, 0)
 
-      if (pokemonsListFormated && !loading) {
+      if (pokemonsListFormated.length > 0 && !loading) {
         setMaxPage(Math.floor(pokemonsListFormated.length / resultsPerPage))
         setPageList(pokemonsListFormated.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
       }
