@@ -1,12 +1,12 @@
 .Pagination {
-  width: 50%;
+  width: 100%;
   min-width: 200px;
   height: 10%;
   min-height: 50px;
   margin: 10px 0;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   .page {
@@ -24,6 +24,7 @@
   }
 
   .btn-left, .btn-right {
+    margin: 0 10%;
     color: $color-secondary;
     
     display: flex;
