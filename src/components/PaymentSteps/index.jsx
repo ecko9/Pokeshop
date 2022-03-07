@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import CheckCartStep from './CheckCartStep';
 import CheckPaymentInfosStep from './CheckPaymentInfosStep';
 import CheckUserInfosStep from './CheckUserInfosStep';
+import PaymentSuccess from './PaymentSuccess';
 import StepChange from './StepChange';
 import StepIndex from './StepIndex';
 
@@ -17,7 +18,6 @@ const PaymentSteps = () => {
 
   React.useEffect(
     () => {
-      console.log("coucou")
       if (cart && cart.length > 0)
         setTotalCartPrice(cart.reduce((a, b) => a + (b.pokemonPrice * b.quantity), 0))
       if (cart.length === 0)
@@ -34,6 +34,8 @@ const PaymentSteps = () => {
         return (<CheckUserInfosStep userInfos={userInfos} setUserInfos={setUserInfos} />)
       case 2:
         return (<CheckPaymentInfosStep userInfos={userInfos} totalCartPrice={totalCartPrice} />)
+      case 3:
+        return (<PaymentSuccess />)
       default:
         return
     }
@@ -46,7 +48,7 @@ const PaymentSteps = () => {
 
       {displayStep()}
 
-      <StepChange step={step} setStep={setStep} totalCartPrice={totalCartPrice} isValidUserInfos={isValidUserInfos} />
+      {(step < 3) && <StepChange step={step} setStep={setStep} totalCartPrice={totalCartPrice} isValidUserInfos={isValidUserInfos} />}
 
     </div>
   );

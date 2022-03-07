@@ -89,7 +89,7 @@ const usePokemonsInfos = () => {
       }
 
       if (pokemonsList && pokemonsList.length > 0)
-        fetchPokemonsInfos(pokemonsList)
+        return fetchPokemonsInfos(pokemonsList)
 
       return
     }, [pokemonsList]

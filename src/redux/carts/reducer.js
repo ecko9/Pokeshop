@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_TO_CART } from "./types";
+import { ADD_TO_CART, REMOVE_TO_CART, RESET_CART } from "./types";
 
 const initialState = {
   cart: localStorage['cart'] ? JSON.parse(localStorage['cart']) : []
@@ -53,7 +53,10 @@ const cartsReducer = (state = initialState, action) => {
         ...state,
         cart: removeQuantityOrItemToCart(state.cart, action.item)
       }
-
+    case RESET_CART:
+      return {
+        cart: []
+      }
     default:
       return state;
   }

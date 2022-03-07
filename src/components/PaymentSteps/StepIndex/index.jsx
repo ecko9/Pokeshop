@@ -5,11 +5,11 @@ const StepIndex = ({ step }) => {
   const setStepName = () => {
     switch (step) {
       case 0:
-        return "Récapitulatif commande"
+        return "Récapitulatif Commande"
       case 1:
         return "Coordonnées"
       case 2:
-        return "Informations de paiement"
+        return "Paiement"
       default:
         return ""
     }
