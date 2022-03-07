@@ -52,7 +52,7 @@ const usePokemonsInfos = () => {
         return {
           name: getFrenchName(response2.names),
           id: response1.id,
-          color: response2.color.name,
+          color: response2.color.name === "white" ? "wheat" : response2.color.name,
           types: getAllTypes(response1.types),
           height: response1.height,
           weight: response1.weight,

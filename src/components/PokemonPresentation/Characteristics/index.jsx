@@ -10,15 +10,15 @@ const Characteristics = ({ pokemon }) => {
         )
       case 'attack':
         return (
-          <i className="fa-solid fa-hand-fist fa-2xl" style={{ color: 'rgb(57, 199, 32)' }}></i>
+          <i className="fa-solid fa-hand-fist fa-2xl" style={{ color: 'orange' }}></i>
         )
       case 'special-attack':
         return (
-          <i className="fa-solid fa-hand-fist fa-2xl" style={{ color: 'aqua' }}></i>
+          <i className="fa-solid fa-hand-fist fa-2xl" style={{ color: 'orangered' }}></i>
         )
       case 'defense':
         return (
-          <i className="fa-solid fa-shield fa-2xl" style={{ color: 'rgb(57, 199, 32)' }}></i>
+          <i className="fa-solid fa-shield fa-2xl" style={{ color: 'green' }}></i>
         )
       case 'special-defense':
         return (
@@ -26,7 +26,7 @@ const Characteristics = ({ pokemon }) => {
         )
       case 'speed':
         return (
-          <i className="fa-solid fa-bolt fa-2xl" style={{ color: 'rgb(226, 174, 17)' }}></i>
+          <i className="fa-solid fa-bolt fa-2xl" style={{ color: 'rgb(255, 208, 0)' }}></i>
         )
       default:
         return;
@@ -36,8 +36,10 @@ const Characteristics = ({ pokemon }) => {
   return (
     <div className='Characteristics'>
 
-      <div className='height'><i className="fa-solid fa-arrows-up-down fa-lg"></i><span>{pokemon.height}</span></div>
-      <div className='weight'><i className="fa-solid fa-weight-hanging fa-lg"></i><span>{pokemon.weight}</span></div>
+      <div className='size'>
+        <div className='height'><i className="fa-solid fa-arrows-up-down fa-2xl"></i><span>{pokemon.height}</span></div>
+        <div className='weight'><i className="fa-solid fa-weight-hanging fa-xl"></i><span>{pokemon.weight}</span></div>
+      </div>
 
       <div className='stats'>
         {pokemon.stats.map(stat => (

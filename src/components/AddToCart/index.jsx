@@ -47,7 +47,7 @@ const AddToCart = ({ pokemon }) => {
       </div>
 
       <div className='btn-cart link' onClick={e => addPokemonToCart(e)}>
-        <i className="fa-solid fa-cart-shopping fa-xl"></i>
+        <i className="fa-solid fa-cart-shopping fa-lg"></i>
       </div>
 
     </div>
