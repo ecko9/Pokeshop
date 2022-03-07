@@ -34,7 +34,6 @@ const StepChange = ({ step, setStep, totalCartPrice, isValidUserInfos }) => {
 
   return (
     <div className='StepChange'>
-      {console.log(step)}
 
       {step > 0 ?
         <div className='btn-prev' onClick={e => prevStep(e)}>

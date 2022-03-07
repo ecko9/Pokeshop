@@ -10,10 +10,10 @@ const PokemonsFilters = ({ setPageList, pokemonsListFormated, setPage }) => {
       if (search.length > 1 && (search !== "" || " " || "  "))
         setPageList(pokemonsListFormated.filter(((pokemon) => pokemon.name.toLowerCase().includes(search.toLowerCase()) === true)))
       else
-        setPageList(pokemonsListFormated.slice(0, 50))
+        setPageList(pokemonsListFormated.slice(0, 25))
       return
       // eslint-disable-next-line
-    }, [search, pokemonsListFormated]
+    }, [search]
   )
 
   return (

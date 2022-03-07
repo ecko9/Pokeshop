@@ -8,7 +8,7 @@ import usePokemonsInfos from 'hooks/usePokemonsInfos';
 
 const App = () => {
 
-  const fetchPokemons = usePokemonsInfos()
+  const fetchList = usePokemonsInfos()
 
   return (
     <div className='App'>

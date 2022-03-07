@@ -7,7 +7,7 @@ import PokemonsFilters from './_PokemonsFilters';
 
 const PokemonList = () => {
 
-  const resultsPerPage = 50
+  const resultsPerPage = 25
   const [page, setPage] = React.useState(0)
   const [maxPage, setMaxPage] = React.useState(1)
   const [pageList, setPageList] = React.useState(null)
@@ -53,7 +53,10 @@ const PokemonList = () => {
       }
 
       pokemonListElement.current.scrollTo(0, 0)
+
       if (pokemonsListFormated && !loading) {
+        if (maxPage === 1)
+          setMaxPage(Math.floor(pokemonsListFormated.length / resultsPerPage))
         setPageList(pokemonsListFormated.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
       }
       else {
