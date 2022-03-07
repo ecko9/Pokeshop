@@ -80,7 +80,7 @@ const usePokemonsInfos = () => {
                 .then((response2) => {
 
                   array.push(formatedPokemonInfos(response1, response2))
-                  fetchPokemonsInfos(pokemonsList, array, index + 1)
+                  return fetchPokemonsInfos(pokemonsList, array, index + 1)
                 })
                 .catch(error => console.error(error))
             })
