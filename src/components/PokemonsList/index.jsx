@@ -55,8 +55,7 @@ const PokemonList = () => {
       pokemonListElement.current.scrollTo(0, 0)
 
       if (pokemonsListFormated && !loading) {
-        if (maxPage === 1)
-          setMaxPage(Math.floor(pokemonsListFormated.length / resultsPerPage))
+        setMaxPage(Math.floor(pokemonsListFormated.length / resultsPerPage))
         setPageList(pokemonsListFormated.slice((page * resultsPerPage), (page * resultsPerPage) + resultsPerPage))
       }
       else {
