@@ -42,7 +42,7 @@ const PokemonList = () => {
         }
       }
 
-      const fetchList = () => {
+      const fetchList = async () => {
         fetch(`https://pokeapi.co/api/v2/pokemon?offset=${page * resultsPerPage}&limit=${resultsPerPage}`)
           .then(response => response.json())
           .then(async response => {
@@ -61,7 +61,7 @@ const PokemonList = () => {
       }
       return
       // eslint-disable-next-line
-    }, [page, loading]
+    }, [page]
   )
 
 
